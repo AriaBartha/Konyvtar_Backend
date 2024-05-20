@@ -19,9 +19,9 @@ class RentalFactory extends Factory
     {
         $bookIds = Book::all()->pluck("id");
         $startDate = fake()->date();
-        $endDate = fake()->date($startDate ('+1 week'));
+        //$endDate = fake()->date($startDate ('+1 week'));
         //$startDate = fake()->dateTimeBetween('-1year')->format("Y-m-d");
-        //$endDate = date("Y-m-d", strtotime($startDate. " +1 week"));
+        $endDate = date("Y-m-d", strtotime($startDate. " +1 week"));
         return [
             'book_id' => fake()->randomElement($bookIds),
             'start_date' => $startDate,
